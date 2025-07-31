@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSB College Bus System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>VSB College Bus Tracking System</h1>
+            <p>Real-time bus tracking and management system</p>
+        </header>
+
+        <main class="login-portals">
+            <div class="portal-card" onclick="openStudentLogin()">
+                <div class="portal-icon">🎓</div>
+                <h2>Student Login</h2>
+                <p>Track your bus and view driver details</p>
+            </div>
+
+            <div class="portal-card" onclick="openDriverLogin()">
+                <div class="portal-icon">🚌</div>
+                <h2>Driver Login</h2>
+                <p>Manage attendance and update status</p>
+            </div>
+
+            <div class="portal-card" onclick="openAdminLogin()">
+                <div class="portal-icon">⚙️</div>
+                <h2>Admin</h2>
+                <p>Manage drivers, buses, and assignments</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 VSB College Bus System. All rights reserved by Prasanth @2025</p>
+        </footer>
+    </div>
+
+    <!-- Student Login Modal -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('studentModal')">&times;</span>
+            <h2>Student Login</h2>
+            <form id="studentLoginForm">
+                <input type="text" id="studentName" placeholder="Student Name" required>
+                <input type="text" id="studentBusNumber" placeholder="Bus Number" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Driver Login Modal -->
+    <div id="driverModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('driverModal')">&times;</span>
+            <h2>Driver Login</h2>
+            <form id="driverLoginForm">
+                <input type="text" id="driverName" placeholder="Driver Name" required>
+                <input type="text" id="driverBusNumber" placeholder="Bus Number" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('adminModal')">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="adminLoginForm">
+                <input type="password" id="adminPassword" placeholder="Admin Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
