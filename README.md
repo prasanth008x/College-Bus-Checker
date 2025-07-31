@@ -36,13 +36,23 @@ A comprehensive real-time bus tracking and management system for VSB College wit
 ## Getting Started
 
 ### Prerequisites
+- Node.js (version 14 or higher)
+- npm (comes with Node.js)
 - Modern web browser (Chrome, Firefox, Safari, Edge)
-- No server setup required - runs entirely in the browser
 
 ### Installation
 1. Download all files to a folder on your computer
-2. Open `index.html` in your web browser
-3. Start using the system immediately!
+2. Open terminal/command prompt in the project folder
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the server:
+   ```bash
+   npm start
+   ```
+5. Open your browser and go to: `http://localhost:3000`
+6. Start using the system immediately!
 
 ### Default Admin Password
 - **Password**: `admin123`
@@ -75,9 +85,9 @@ A comprehensive real-time bus tracking and management system for VSB College wit
 ## Technical Features
 
 ### Real-time Synchronization
-- Uses localStorage for cross-device data persistence
-- No internet connection required after initial load
-- Data syncs automatically between different browser sessions
+- Uses Node.js backend with JSON file storage for true cross-device data persistence
+- Real-time updates across all devices and users
+- Data syncs automatically between different devices, browsers, and users
 
 ### Responsive Design
 - Works on desktop, tablet, and mobile devices
@@ -93,9 +103,17 @@ A comprehensive real-time bus tracking and management system for VSB College wit
 ## File Structure
 ```
 vsb-college-bus-system/
-├── index.html          # Main application file
-├── styles.css          # Styling and responsive design
-├── script.js           # Core functionality and logic
+├── server.js           # Node.js backend server
+├── package.json        # Dependencies and scripts
+├── public/
+│   ├── index.html      # Main application file
+│   ├── styles.css      # Styling and responsive design
+│   └── script.js       # Frontend functionality with API calls
+├── data/               # Auto-created data storage directory
+│   ├── drivers.json    # Driver assignments
+│   ├── stops.json      # Bus stops data
+│   ├── attendance.json # Daily attendance records
+│   └── status.json     # Driver status data
 └── README.md           # This documentation
 ```
 
@@ -106,13 +124,13 @@ vsb-college-bus-system/
 - Edge 79+
 
 ## Data Storage
-The system uses browser localStorage to store:
+The system uses JSON files on the server to store:
 - Driver assignments and contact information
 - Bus routes and stop information
 - Daily attendance records
 - Driver active/inactive status
 
-**Note**: Data persists across browser sessions but is device-specific. For true cross-device synchronization, consider implementing a backend database.
+**Note**: Data persists on the server and is accessible from any device. All users share the same data in real-time.
 
 ## Support & Contact
 For technical support or feature requests, contact:
@@ -125,5 +143,6 @@ For technical support or feature requests, contact:
 - GPS tracking integration
 - SMS notifications
 - Mobile app version
-- Backend database for true cross-device sync
+- Database integration (MySQL/PostgreSQL)
 - Advanced reporting and analytics
+- WebSocket integration for real-time updates
